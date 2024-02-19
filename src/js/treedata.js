@@ -13,9 +13,9 @@ export const treedata = [
                 level: 2,
                 timerange: [-5000, -221],
                 children: [
-                    { id: 2, label: 'cnty点', ischeck: false, level: 3, timerange: [-5000, -221] },
-                    { id: 3, label: 'pref点', ischeck: false, level: 3, timerange: [-5000, -221] },
-                    { id: 4, label: 'pref面', ischeck: false, level: 3, timerange: [-5000, -221] }
+                    { id: 2, label: '县级点', ischeck: false, level: 3, timerange: [-5000, -221] },
+                    { id: 3, label: '州级点', ischeck: false, level: 3, timerange: [-5000, -221] },
+                    { id: 4, label: '州级行政面', ischeck: false, level: 3, timerange: [-5000, -221] }
                 ]
             },
             {
@@ -25,9 +25,9 @@ export const treedata = [
                 level: 2,
                 timerange: [-220, -202],
                 children: [
-                    { id: 6, label: 'cnty点', ischeck: false, level: 3, timerange: [-220, -202] },
-                    { id: 7, label: 'pref点', ischeck: false, level: 3, timerange: [-220, -202] },
-                    { id: 8, label: 'pref面', ischeck: false, level: 3, timerange: [-220, -202] }
+                    { id: 6, label: '县级点', ischeck: false, level: 3, timerange: [-220, -202] },
+                    { id: 7, label: '州级点', ischeck: false, level: 3, timerange: [-220, -202] },
+                    { id: 8, label: '州级行政面', ischeck: false, level: 3, timerange: [-220, -202] }
                 ]
             },
             {
@@ -37,9 +37,9 @@ export const treedata = [
                 level: 2,
                 timerange: [-201, 220],
                 children: [
-                    { id: 10, label: 'cnty点', ischeck: false, level: 3, timerange: [-201, 220] },
-                    { id: 11, label: 'pref点', ischeck: false, level: 3, timerange: [-201, 220] },
-                    { id: 12, label: 'pref面', ischeck: false, level: 3, timerange: [-201, 220] }
+                    { id: 10, label: '县级点', ischeck: false, level: 3, timerange: [-201, 220] },
+                    { id: 11, label: '州级点', ischeck: false, level: 3, timerange: [-201, 220] },
+                    { id: 12, label: '州级行政面', ischeck: false, level: 3, timerange: [-201, 220] }
                 ]
             },
             {
@@ -49,9 +49,9 @@ export const treedata = [
                 level: 2,
                 timerange: [221, 589],
                 children: [
-                    { id: 14, label: 'cnty点', ischeck: false, level: 3, timerange: [221, 589] },
-                    { id: 15, label: 'pref点', ischeck: false, level: 3, timerange: [221, 589] },
-                    { id: 16, label: 'pref面', ischeck: false, level: 3, timerange: [221, 589] }
+                    { id: 14, label: '县级点', ischeck: false, level: 3, timerange: [221, 589] },
+                    { id: 15, label: '州级点', ischeck: false, level: 3, timerange: [221, 589] },
+                    { id: 16, label: '州级行政面', ischeck: false, level: 3, timerange: [221, 589] }
                 ]
             },
             {
@@ -61,9 +61,9 @@ export const treedata = [
                 level: 2,
                 timerange: [590, 907],
                 children: [
-                    { id: 18, label: 'cnty点', ischeck: false, level: 3, timerange: [590, 907] },
-                    { id: 19, label: 'pref点', ischeck: false, level: 3, timerange: [590, 907] },
-                    { id: 20, label: 'pref面', ischeck: false, level: 3, timerange: [590, 907] }
+                    { id: 18, label: '县级点', ischeck: false, level: 3, timerange: [590, 907] },
+                    { id: 19, label: '州级点', ischeck: false, level: 3, timerange: [590, 907] },
+                    { id: 20, label: '州级行政面', ischeck: false, level: 3, timerange: [590, 907] }
                 ]
             },
             {
@@ -73,9 +73,9 @@ export const treedata = [
                 level: 2,
                 timerange: [908, 960],
                 children: [
-                    { id: 22, label: 'cnty点', ischeck: false, level: 3, timerange: [908, 960] },
-                    { id: 23, label: 'pref点', ischeck: false, level: 3, timerange: [908, 960] },
-                    { id: 24, label: 'pref面', ischeck: false, level: 3, timerange: [908, 960] }
+                    { id: 22, label: '县级点', ischeck: false, level: 3, timerange: [908, 960] },
+                    { id: 23, label: '州级点', ischeck: false, level: 3, timerange: [908, 960] },
+                    { id: 24, label: '州级行政面', ischeck: false, level: 3, timerange: [908, 960] }
                 ]
             },
             {
@@ -85,9 +85,9 @@ export const treedata = [
                 level: 2,
                 timerange: [961, 1276],
                 children: [
-                    { id: 26, label: 'cnty点', ischeck: false, level: 3, timerange: [961, 1276] },
-                    { id: 27, label: 'pref点', ischeck: false, level: 3, timerange: [961, 1276] },
-                    { id: 28, label: 'pref面', ischeck: false, level: 3, timerange: [961, 1276] }
+                    { id: 26, label: '县级点', ischeck: false, level: 3, timerange: [961, 1276] },
+                    { id: 27, label: '州级点', ischeck: false, level: 3, timerange: [961, 1276] },
+                    { id: 28, label: '州级行政面', ischeck: false, level: 3, timerange: [961, 1276] }
                 ]
             },
             {
@@ -97,9 +97,9 @@ export const treedata = [
                 level: 2,
                 timerange: [1277, 1368],
                 children: [
-                    { id: 30, label: 'cnty点', ischeck: false, level: 3, timerange: [1277, 1368] },
-                    { id: 31, label: 'pref点', ischeck: false, level: 3, timerange: [1277, 1368] },
-                    { id: 32, label: 'pref面', ischeck: false, level: 3, timerange: [1277, 1368] }
+                    { id: 30, label: '县级点', ischeck: false, level: 3, timerange: [1277, 1368] },
+                    { id: 31, label: '州级点', ischeck: false, level: 3, timerange: [1277, 1368] },
+                    { id: 32, label: '州级行政面', ischeck: false, level: 3, timerange: [1277, 1368] }
                 ]
             },
             {
@@ -109,9 +109,9 @@ export const treedata = [
                 level: 2,
                 timerange: [1369, 1644],
                 children: [
-                    { id: 34, label: 'cnty点', ischeck: false, level: 3, timerange: [1369, 1644] },
-                    { id: 35, label: 'pref点', ischeck: false, level: 3, timerange: [1369, 1644] },
-                    { id: 36, label: 'pref面', ischeck: false, level: 3, timerange: [1369, 1644] }
+                    { id: 34, label: '县级点', ischeck: false, level: 3, timerange: [1369, 1644] },
+                    { id: 35, label: '州级点', ischeck: false, level: 3, timerange: [1369, 1644] },
+                    { id: 36, label: '州级行政面', ischeck: false, level: 3, timerange: [1369, 1644] }
                 ]
             },
             {
@@ -121,9 +121,9 @@ export const treedata = [
                 level: 2,
                 timerange: [1645, 1840],
                 children: [
-                    { id: 38, label: 'cnty点', ischeck: false, level: 3, timerange: [1645, 1840] },
-                    { id: 39, label: 'pref点', ischeck: false, level: 3, timerange: [1645, 1840] },
-                    { id: 40, label: 'pref面', ischeck: false, level: 3, timerange: [1645, 1840] }
+                    { id: 38, label: '县级点', ischeck: false, level: 3, timerange: [1645, 1840] },
+                    { id: 39, label: '州级点', ischeck: false, level: 3, timerange: [1645, 1840] },
+                    { id: 40, label: '州级行政面', ischeck: false, level: 3, timerange: [1645, 1840] }
                 ]
             }
         ]

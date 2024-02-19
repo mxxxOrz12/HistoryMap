@@ -50,9 +50,7 @@ body {
     animation: logoAnimation 2.5s infinite alternate;
     letter-spacing: 1.5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* 添加阴影效果 */
-    /* 增加字母间距 */
-    /* 添加动画效果 */
+
 }
 
 @keyframes logoAnimation {

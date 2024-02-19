@@ -32,11 +32,3 @@ export const getdata = (map) => {
     }
 };
 
-// Helper function to create marker element
-function createMarkerElement(iconUrl) {
-    const markerElement = document.createElement('div');
-    markerElement.style.backgroundImage = `url(${iconUrl})`;
-    markerElement.style.width = '30px';
-    markerElement.style.height = '30px';
-    return markerElement;
-}

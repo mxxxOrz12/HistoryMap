@@ -1,6 +1,5 @@
 import axios from 'axios';
 import mapboxgl from 'mapbox-gl';
-import { c } from 'naive-ui';
 
 
 export const clusterCntyPoints = (map, url) => {
@@ -141,11 +140,11 @@ export const clusterCntyPoints = (map, url) => {
             new mapboxgl.Popup()
                 .setLngLat(coordinates)
                 .setHTML(
-                    `<p>名称： ${namech}</p>
-                    <p>类型： ${typech}</p>
-                    <p>位置: ${presloc}</p>
-                    <p>开始时间: ${begyr}</p>
-                    <p>结束时间: ${endyr}</p>`
+                    `<p>namech: ${namech}</p>
+                <p>typech: ${typech}</p>
+                <p>presloc: ${presloc}</p>
+                <p>begyr: ${begyr}</p>
+                <p>endyr: ${endyr}</p>`
                 )
                 .addTo(map);
         });
@@ -168,7 +167,6 @@ export const clusterPrefptsPoints = (map, url) => {
     }
 
     fetchData(url).then((point) => {
-        console.log(point);
         map.addSource("prefpts", {
             type: "geojson",
             data: point,
@@ -301,11 +299,11 @@ export const clusterPrefptsPoints = (map, url) => {
             new mapboxgl.Popup()
                 .setLngLat(coordinates)
                 .setHTML(
-                    `<p>名称： ${namech}</p>
-                    <p>类型 ${typech}</p>
-                    <p>位置: ${presloc}</p>
-                    <p>开始时间: ${begyr}</p>
-                    <p>结束时间: ${endyr}</p>`
+                    `<p>namech: ${namech}</p>
+            <p>typech: ${typech}</p>
+            <p>presloc: ${presloc}</p>
+            <p>begyr: ${begyr}</p>
+            <p>endyr: ${endyr}</p>`
                 )
                 .addTo(map);
         });
@@ -327,7 +325,6 @@ export const prefpgn = (map, url) => {
         });
     }
     fetchData(url).then((pref) => {
-        console.log(pref);
         map.addSource("prefpgn", {
             type: "geojson",
             data: pref,
@@ -358,13 +355,19 @@ export const prefpgn = (map, url) => {
             const begyr = clickedFeature.properties.begyr;
             const endyr = clickedFeature.properties.endyr;
 
+            // Ensure that if the map is zoomed out such that
+            // multiple copies of the feature are visible, the
+            // popup appears over the copy being pointed to.
+
+
             new mapboxgl.Popup()
                 .setLngLat(coordinates)
                 .setHTML(
-                    `<p>名称： ${namech}</p>
-                    <p>类型 ${typech}</p>
-                    <p>开始时间: ${begyr}</p>
-                    <p>结束时间: ${endyr}</p>`
+                    `<p>namech: ${namech}</p>
+            <p>typech: ${typech}</p>
+            <p>presloc: ${presloc}</p>
+            <p>begyr: ${begyr}</p>
+            <p>endyr: ${endyr}</p>`
                 )
                 .addTo(map);
         });

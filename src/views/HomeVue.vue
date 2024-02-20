@@ -28,7 +28,7 @@
                 <p>中国历史电子地图平台是一个专门为中国历史爱好者打造的网站，我们提供了丰富的历史地图资源，以及历史事件的详细介绍，帮助用户更好的了解中国历史。</p>
 
                 <div class="btn-box">
-                    <router-link to="/map" class="btn">开始</router-link>
+                    <router-link to="/start" class="btn">开始</router-link>
                     <router-link to="/more" class="btn">更多</router-link>
                 </div>
             </div>

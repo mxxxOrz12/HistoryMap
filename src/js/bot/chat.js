@@ -5,22 +5,19 @@ export function chatBot() {
     const chatbox = document.querySelector('.chatbox');
 
     let userMessage;
-    const API_KEY = "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";
-    const inputInitHeight = chatInput.scrollHeight;
+    const API_KEY = "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";
 
 
     const createChatLi = (message, className) => {
         const chatLi = document.createElement("li");
         chatLi.classList.add("chat", className);
-        let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
+        let chatContent = className === "outgoing" ? `<p>${message}</p>` : `<span class="material-symbols-outlined">smart_toy</span><p>${message}</p>`;
         chatLi.innerHTML = chatContent;
-        chatLi.querySelector("p").textContent = message;
         return chatLi;
     }
 
-    const generateResponse = (incomingChatLi) => {
+    const generateResponse = () => {
         const API_URL = "https://api.openai.com/v1/chat/completions";
-        const messageElement = incomingChatLi.querySelector("p");
 
         const requestOption = {
             method: "POST",
@@ -34,45 +31,20 @@ export function chatBot() {
             })
         };
         fetch(API_URL, requestOption).then(res => res.json()).then(data => {
-            messageElement.textContent = data.choices[0].message.content;
-        }).catch(err =>
-            messageElement.textContent = "服务异常，请稍后再试").finally(() => {
-                chatbox.scrollTo(0, chatbox.scrollHeight);
-            });
+            console.log(data);
+        }).catch(err => console.log(err));
     }
 
 
     const handleChat = () => {
         userMessage = chatInput.value.trim();
         if (!userMessage) return;
-        chatInput.value = "";
-        chatInput.style.height = `${inputInitHeight}px`;
-
-
         chatbox.appendChild(createChatLi(userMessage, "outgoing"));
-        chatbox.scrollTo(0, chatbox.scrollHeight);
         setTimeout(() => {
-            const incomingChatLi = createChatLi("思考中", "incoming");
-            chatbox.appendChild(incomingChatLi);
-            chatbox.scrollTo(0, chatbox.scrollHeight);
+            chatbox.appendChild(createChatLi("思考中", "incoming"));
+            generateResponse();
 
-            generateResponse(incomingChatLi);
-
-        }, 500)
+        }, 600)
     }
-
-
-    chatInput.addEventListener("input", () => {
-
-        chatInput.style.height = `${inputInitHeight}px`;
-        chatInput.style.height = `${chatInput.scrollHeight}px`;
-    });
-    chatInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
-            e.preventDefault();
-            handleChat();
-        }
-    });
-
     sendChatBtn.addEventListener("click", handleChat);
 }

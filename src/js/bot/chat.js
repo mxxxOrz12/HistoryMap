@@ -5,7 +5,7 @@ export function chatBot() {
     const chatbox = document.querySelector('.chatbox');
 
     let userMessage;
-    const API_KEY = "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";
+    const API_KEY = "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";
     const inputInitHeight = chatInput.scrollHeight;
 
 

@@ -8,10 +8,6 @@ onMounted(() => {
 
 <template>
     <div class="containbot">
-
-        <router-link to="/">
-            <Back class="back" />
-        </router-link>
         <div class="chatbot">
             <header>
                 历史机器人
@@ -22,6 +18,7 @@ onMounted(() => {
                     <p>你好，我是历史机器人<br>有什么可以帮到你的吗？</p>
                 </li>
                 <li class="chat outgoing">
+                    <p>我了解中国的历史和地理</p>
                 </li>
             </ul>
             <div class="chat-input">
@@ -42,24 +39,13 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-image: url(../assets/pic/背景1.jpg);
-}
-
-.back {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 3.5em;
-    height: 3.5em;
-    margin-right: 8px;
-    color: azure;
 }
 
 .chatbot {
     position: fixed;
-    right: 80px;
-    bottom: 40px;
-    width: 550px;
+    right: 40px;
+    bottom: 100px;
+    width: 500px;
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
@@ -77,9 +63,9 @@ onMounted(() => {
 }
 
 .chatbot .chatbox {
-    height: 600px;
+    height: 520px;
     overflow-y: auto;
-    padding: 30px 20px 120px;
+    padding: 30px 20px 70px;
 }
 
 .chatbox .chat {
@@ -106,7 +92,6 @@ onMounted(() => {
 .chatbox .chat p {
     padding: 12px 12px;
     border-radius: 10px 10px 0 10px;
-    white-space: pre-wrap;
     background: #e8e9b6;
     font-size: 1rem;
     line-height: 1.5;
@@ -125,7 +110,7 @@ onMounted(() => {
     width: 100%;
     display: flex;
     gap: 5px;
-    padding: 5px 5px;
+    padding: 10px 20px;
     border-top: 1px solid #ccc;
     background: #fff;
 }
@@ -134,12 +119,11 @@ onMounted(() => {
     border: none;
     outline: none;
     font-size: 1.1rem;
-    max-height: 180px;
     font-weight: 600;
     resize: none;
     padding: 16px 15px 16px 0;
-    height: 60px;
-    width: 86%;
+    height: 70px;
+    width: 80%;
 }
 
 .chat-input span {

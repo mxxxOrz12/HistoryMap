@@ -1,110 +1,109 @@
-
 <script setup>
-import { ref, onMounted } from 'vue'
-import mapboxgl from 'mapbox-gl';
-import { MapboxDark } from '@/js/mapboxMap'
-import xuzhou from '../../assets/json/HistoryXuzhou.json'
+    import { ref, onMounted } from 'vue'
+    import mapboxgl from 'mapbox-gl';
+    import { MapboxDark } from '@/js/mapboxMap'
+    import xuzhou from '../../assets/json/HistoryXuzhou.json'
 
-const map = ref(null);
-let interval = null; // 用于控制动画的定时器
-let index = 0; // 当前动画的索引
-let isPaused = false; // 动画是否暂停的标志
-let previousSourceId = null; // 上一个源ID
-let previousLayerId = null; // 上一个图层ID
-let zoomLevel = 7; // 初始缩放级别
-xuzhou.features = xuzhou.features.reverse();
+    const map = ref(null);
+    let interval = null; // 用于控制动画的定时器
+    let index = 0; // 当前动画的索引
+    let isPaused = false; // 动画是否暂停的标志
+    let previousSourceId = null; // 上一个源ID
+    let previousLayerId = null; // 上一个图层ID
+    let zoomLevel = 7; // 初始缩放级别
+    xuzhou.features = xuzhou.features.reverse();
 
-// 动画暂停函数
-const animationPause = () => {
-    isPaused = true; // 标记动画为暂停状态
+    // 动画暂停函数
+    const animationPause = () => {
+        isPaused = true; // 标记动画为暂停状态
 
-};
-const infoAlert = () => {
-    alert('动画已暂停');
+    };
+    const infoAlert = () => {
+        alert('动画已暂停');
 
-}
-const playAnimation = () => {
-    // 确保在动画已暂停且定时器存在时恢复动画
-    if (isPaused && interval) {
-        isPaused = false;
-        return;
     }
+    const playAnimation = () => {
+        // 确保在动画已暂停且定时器存在时恢复动画
+        if (isPaused && interval) {
+            isPaused = false;
+            return;
+        }
 
-    // 如果定时器不存在，则开始或重新开始动画
-    if (!interval) {
-        index = 0;
-        previousSourceId = null;
-        previousLayerId = null;
+        // 如果定时器不存在，则开始或重新开始动画
+        if (!interval) {
+            index = 0;
+            previousSourceId = null;
+            previousLayerId = null;
 
-        map.value.flyTo({ center: [117.1113, 34.1554], zoom: zoomLevel });
-        interval = setInterval(function () {
-            if (isPaused) { // 如果动画暂停，则跳过此次迭代
-                return;
-            }
-            if (index < xuzhou.features.length) {
-                // 在添加新图层之前删除上一个图层和源
-                if (previousSourceId && previousLayerId) {
-                    map.value.removeLayer(previousLayerId);
-                    map.value.removeSource(previousSourceId);
+            map.value.flyTo({ center: [117.1113, 34.1554], zoom: zoomLevel });
+            interval = setInterval(function () {
+                if (isPaused) { // 如果动画暂停，则跳过此次迭代
+                    return;
                 }
-                const featureToLoad = xuzhou.features[index];
-                const sourceId = 'xuzhou' + index;
-                const layerId = 'xuzhouLayer' + index;
-
-                map.value.addSource(sourceId, {
-                    type: 'geojson',
-                    data: {
-                        type: 'FeatureCollection',
-                        features: [featureToLoad]
-                    }
-                });
-
-                map.value.addLayer({
-                    'id': layerId,
-                    'type': 'fill',
-                    'source': sourceId,
-                    'layout': {},
-                    'paint': {
-                        'fill-color': '#FF0000', // 鲜艳的红色
-                        'fill-opacity': 0.75,
-                        'fill-outline-color': '#FFFFFF'
-                    }
-                });
-                map.value.on('click', layerId, (e) => {
-                    const clickedFeature = e.features[0];
-                    const namech = clickedFeature.properties.name_ch;
-                    const typech = clickedFeature.properties.type_ch;
-                    const begyr = clickedFeature.properties.beg_yr;
-                    const endyr = clickedFeature.properties.end_yr;
-                    new mapboxgl.Popup()
-                        .setLngLat([117.1113, 34.1554])
-                        .setHTML(
-                            `<p>名称 ${namech}</p>
-                            <p>类型: ${typech}</p>
-                            <p>开始时间: ${begyr}年</p>
-                            <p>结束时间: ${endyr}年</p>`
-                        )
-                        .addTo(map.value);
-                });
-                previousSourceId = sourceId;
-                previousLayerId = layerId;
-                index++;
-            } else {
-                setTimeout(() => {
-                    clearInterval(interval); // 所有要素都已加载，清除定时器
-                    interval = null;
+                if (index < xuzhou.features.length) {
+                    // 在添加新图层之前删除上一个图层和源
                     if (previousSourceId && previousLayerId) {
                         map.value.removeLayer(previousLayerId);
                         map.value.removeSource(previousSourceId);
                     }
-                }, 0); // 使用setTimeout确保这段代码在当前执行栈之后运行
-            }
-        }, 2000);
-    }
-};
-onMounted(() => {
-    map.value = MapboxDark();
-})
+                    const featureToLoad = xuzhou.features[index];
+                    const sourceId = 'xuzhou' + index;
+                    const layerId = 'xuzhouLayer' + index;
+
+                    map.value.addSource(sourceId, {
+                        type: 'geojson',
+                        data: {
+                            type: 'FeatureCollection',
+                            features: [featureToLoad]
+                        }
+                    });
+
+                    map.value.addLayer({
+                        'id': layerId,
+                        'type': 'fill',
+                        'source': sourceId,
+                        'layout': {},
+                        'paint': {
+                            'fill-color': '#FF0000', // 鲜艳的红色
+                            'fill-opacity': 0.75,
+                            'fill-outline-color': '#FFFFFF'
+                        }
+                    });
+                    map.value.on('click', layerId, (e) => {
+                        const clickedFeature = e.features[0];
+                        const namech = clickedFeature.properties.name_ch;
+                        const typech = clickedFeature.properties.type_ch;
+                        const begyr = clickedFeature.properties.beg_yr;
+                        const endyr = clickedFeature.properties.end_yr;
+                        new mapboxgl.Popup()
+                            .setLngLat([117.1113, 34.1554])
+                            .setHTML(
+                                `<p>名称 ${namech}</p>
+                            <p>类型: ${typech}</p>
+                            <p>开始时间: ${begyr}年</p>
+                            <p>结束时间: ${endyr}年</p>`
+                            )
+                            .addTo(map.value);
+                    });
+                    previousSourceId = sourceId;
+                    previousLayerId = layerId;
+                    index++;
+                } else {
+                    setTimeout(() => {
+                        clearInterval(interval); // 所有要素都已加载，清除定时器
+                        interval = null;
+                        if (previousSourceId && previousLayerId) {
+                            map.value.removeLayer(previousLayerId);
+                            map.value.removeSource(previousSourceId);
+                        }
+                    }, 0); // 使用setTimeout确保这段代码在当前执行栈之后运行
+                }
+            }, 2000);
+        }
+    };
+    onMounted(() => {
+        map.value = MapboxDark();
+    })
 
 
 
@@ -157,131 +156,135 @@ onMounted(() => {
 </template>
 
 <style scoped>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #e0e0e0;
-}
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #e0e0e0;
+    }
 
-.card-content {
-    padding: 20px;
-    width: 500px;
-    background-color: #fff;
-    border-bottom: 1px solid #e0e0e0;
-}
+    .card-content {
+        padding: 20px;
+        width: 500px;
+        background-color: #fff;
+        border-bottom: 1px solid #e0e0e0;
+    }
 
-.card-footer {
-    padding: 15px;
-    background-color: #fffdfd;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-}
+    .card-content p {
+        font-size: 16px;
+        line-height: 2;
 
-.player {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    z-index: 1;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+        text-indent: 1.5em;
+    }
 
-}
+    .card-footer {
+        padding: 15px;
+        background-color: #fffdfd;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
 
-.player .el-button {
-    margin: 10px 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+    .player {
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        z-index: 1;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
 
-.player .el-button:first-child {
-    background-color: #3498db;
-    color: white;
-}
+    }
 
-.player .el-button:last-child {
-    background-color: #e74c3c;
-    color: white;
-}
+    .player .el-button {
+        margin: 10px 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
 
-/* 鼠标悬停时的按钮效果 */
-.player .el-button:hover {
-    filter: brightness(110%);
-}
+    .player .el-button:first-child {
+        background-color: #3498db;
+        color: white;
+    }
+
+    .player .el-button:last-child {
+        background-color: #e74c3c;
+        color: white;
+    }
+
+    /* 鼠标悬停时的按钮效果 */
+    .player .el-button:hover {
+        filter: brightness(110%);
+    }
 
 
-#map {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    top: 0px;
-    left: 0px;
-}
+    #map {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        top: 0px;
+        left: 0px;
+    }
 
-.header {
-    background-color: #7c1c1c;
-    color: #fff;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* 添加阴影效果 */
-}
+    .header {
+        background-color: #7c1c1c;
+        color: #fff;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* 添加阴影效果 */
+    }
 
-.title {
-    display: flex;
-    font-size: 20px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+    .title {
+        display: flex;
+        font-size: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 
-.site-title {
-    font-family: 'Arial', sans-serif;
-    /* 修改标题字体 */
-    font-weight: bold;
-    font-size: 30px;
-    /* 加粗标题字体 */
-}
+    .site-title {
+        font-family: 'Arial', sans-serif;
+        /* 修改标题字体 */
+        font-weight: bold;
+        font-size: 30px;
+        /* 加粗标题字体 */
+    }
 
-.menu-link {
-    color: #fff;
-    /* 修改菜单项字体颜色 */
-    font-size: 20px;
-    text-decoration: none;
-}
+    .menu-link {
+        color: #fff;
+        /* 修改菜单项字体颜色 */
+        font-size: 20px;
+        text-decoration: none;
+    }
 
-.el-menu {
-    border: none;
-}
+    .el-menu {
+        border: none;
+    }
 
-.el-menu-item {
-    margin-right: 30px;
-    /* 增加菜单项间距 */
-    font-size: 18px;
-    /* 调整菜单项字体大小 */
-}
+    .el-menu-item {
+        margin-right: 30px;
+        /* 增加菜单项间距 */
+        font-size: 18px;
+        /* 调整菜单项字体大小 */
+    }
 
-.el-menu-item:last-child {
-    margin-right: 0;
-}
+    .el-menu-item:last-child {
+        margin-right: 0;
+    }
 
-.el-menu-demo .el-menu-item.is-active .menu-link {
-    color: #42c1e8;
-    font-weight: 600;
-    text-decoration: none;
-    /* 选中状态下的文字颜色 */
-}
+    .el-menu-demo .el-menu-item.is-active .menu-link {
+        color: #42c1e8;
+        font-weight: 600;
+        text-decoration: none;
+        /* 选中状态下的文字颜色 */
+    }
 </style>
-  
-
-  

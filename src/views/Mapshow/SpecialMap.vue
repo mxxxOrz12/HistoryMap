@@ -176,6 +176,17 @@ onMounted(() => {
     width: 500px;
     background-color: #fff;
     border-bottom: 1px solid #e0e0e0;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.card-content h2 {
+    color: #7c1c1c;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    text-indent: 2em;
 }
 
 .card-footer {

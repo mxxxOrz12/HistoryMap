@@ -101,6 +101,7 @@
     color: #fff;
     transition: .3s;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
 }
 
 .navbar a:hover,
@@ -116,6 +117,7 @@
     animation: logoAnimation 2.5s infinite alternate;
     letter-spacing: 1.5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
 
 }
 

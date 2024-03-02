@@ -5,9 +5,8 @@ export function chatBot() {
     const chatbox = document.querySelector('.chatbox');
 
     let userMessage;
-    const API_KEY = "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";
+    const API_KEY = "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";
     const inputInitHeight = chatInput.scrollHeight;
-
 
     const createChatLi = (message, className) => {
         const chatLi = document.createElement("li");
@@ -17,7 +16,6 @@ export function chatBot() {
         chatLi.querySelector("p").textContent = message;
         return chatLi;
     }
-
     const generateResponse = (incomingChatLi) => {
         const API_URL = "https://api.openai.com/v1/chat/completions";
         const messageElement = incomingChatLi.querySelector("p");

@@ -1,4 +1,18 @@
 <script  setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+let username = ref('');
+let password = ref('');
+let remember = ref(false);
+const router = useRouter();
+
+const Login = () => {
+    if (username.value === 'maxiao' && password.value === '123456') {
+        router.push('/map');
+    } else {
+        alert('用户名或密码错误');
+    }
+}
 
 </script>
 <template>
@@ -26,7 +40,7 @@
                     <router-link to="#">忘记密码？</router-link>
                 </div>
 
-                <button type="submit">登录</button>
+                <button type="submit" @click="Login">登录</button>
 
                 <div class="register-link">
                     <p>没有账号？<router-link to="/register">注册</router-link></p>

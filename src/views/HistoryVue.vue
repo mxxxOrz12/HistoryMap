@@ -8,9 +8,8 @@ export let number = n;
 
 <template>
     <div class="out">
-        <!-- <img class="carousel-img" src="../assets/pic/background.jpg" style="background-color: black;"> -->
-
-        <div style="padding-top: 0px; background-color: white; padding-bottom: 48px;">
+        <div
+            style="padding-top: 0px; background-color: #e2d5c3; padding-bottom: 48px;border-radius: 10px;margin-bottom: 10px;">
             <div class="bg-img-center column justify-center items-center q-py-xl">
                 <h1 class="size-40 title text-black q-mt-lg q-pb-none q-mb-none">
                     中国历史地图

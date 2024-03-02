@@ -8,10 +8,6 @@
 
 <template>
     <div class="containbot">
-
-        <router-link to="/">
-            <Back class="back" />
-        </router-link>
         <div class="chatbot">
             <header>
                 历史机器人
@@ -22,6 +18,7 @@
                     <p>你好，我是历史机器人<br>有什么可以帮到你的吗？</p>
                 </li>
                 <li class="chat outgoing">
+                    <p>我了解中国的历史和地理</p>
                 </li>
             </ul>
             <div class="chat-input">

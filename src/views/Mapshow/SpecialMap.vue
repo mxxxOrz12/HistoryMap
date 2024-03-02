@@ -112,46 +112,8 @@
 </script>
 <template>
     <div>
-        <el-row :gutter="20" class="header">
-            <el-col :span="4" class="title">
-                <h1 class="site-title">地图展示</h1>
-            </el-col>
-            <el-col :span="16">
-                <el-menu class="el-menu-demo" mode="horizontal" background-color="#7c1c1c" text-color="#fff"
-                    default-active="2">
-                    <el-menu-item index="1">
-                        <span><router-link to="/map" class="menu-link">历史地理</router-link></span>
-                    </el-menu-item>
-                    <el-menu-item index="2">
-                        <span><router-link to="/map/special" class="menu-link">专题地图</router-link></span>
-                    </el-menu-item>
-                    <el-menu-item index="3">
-                        <span><router-link to="/map/document" class="menu-link">历史文档</router-link></span>
-                    </el-menu-item>
-                    <el-menu-item index="4">
-                        <span><router-link to="/" class="menu-link">回到首页</router-link></span>
-                    </el-menu-item>
-                </el-menu>
-            </el-col>
-        </el-row>
-
-        <div class="player">
-            <div class="card-header">
-                <el-button type="primary" @click=" playAnimation()">播放动画</el-button>
-                <el-button type="primary" @click="infoAlert(); animationPause()">暂停</el-button>
-            </div>
-            <div class="card-content">
-                <h2>徐州的历史简介</h2>
-                <p>徐州，位于中国江苏省北部，是一座历史悠久的城市，有着超过2000年的历史。作为中国古代“九州”之一的徐州，在历史上曾是军事要塞和交通枢纽，拥有丰富的文化遗产。</p>
-                <p>徐州是汉文化的重要发源地之一，汉文化元素在这里有着深厚的积淀。东汉的开国皇帝刘邦曾在徐州地区建立过都城，使得徐州成为了汉文化的重要传承地。</p>
-                <p>除了汉文化，徐州还有许多名胜古迹，如彭祖园、云龙山、汉墓群等，这些都是徐州丰富历史文化的见证。</p>
-                <p>近代以来，徐州经历了多次重要的历史事件，成为了中国近现代历史变革的见证者。今天的徐州不仅是一个历史文化名城，也是江苏省内重要的经济、教育和交通中心。</p>
-            </div>
-            <div class="card-footer">徐州历史行政边界变化展示</div>
-        </div>
-        <div id="map">
-        </div>
-
+        <div>{{ axiosdata }}</div>
+        <div>专题地图</div>
     </div>
 </template>
 

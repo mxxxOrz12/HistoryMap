@@ -32,6 +32,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    min-width: 1300px;
     width: 100%;
     padding: 30px 8%;
     background: transparent;
@@ -50,7 +51,9 @@ body {
     animation: logoAnimation 2.5s infinite alternate;
     letter-spacing: 1.5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
+    /* 添加阴影效果 */
+    /* 增加字母间距 */
+    /* 添加动画效果 */
 }
 
 @keyframes logoAnimation {

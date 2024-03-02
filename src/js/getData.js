@@ -1,10 +1,16 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'; // 导入 Mapbox 样式文件
-import { treedata } from '../js/treedata';
+import {
+    treedata
+} from '../js/treedata';
 import cnty from '../icon/县.png';
 import zhou from '../icon/point1.png';
 import axios from 'axios';
-import { clusterCntyPoints, clusterPrefptsPoints, prefpgn } from '../js/clusterPoint.js';
+import {
+    clusterCntyPoints,
+    clusterPrefptsPoints,
+    prefpgn
+} from '../js/clusterPoint.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibXh4eG9yejEyIiwiYSI6ImNsa2MyMjBvaTBhaHEzcnM0YmQ1d2Y2Y3EifQ.1Ez5HwcosSSBihZN23s9ZA';
 export const getdata = (map) => {

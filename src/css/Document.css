@@ -169,6 +169,7 @@
     line-height: 1.6;
     font-size: 15px;
     width: 545px;
+
 }
 
 .event::before {
@@ -194,4 +195,6 @@
 .page-number {
     font-size: 16px;
     color: #333;
+    position: relative;
+    right: 80px;
 }

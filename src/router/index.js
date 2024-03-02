@@ -34,6 +34,72 @@ const routes = [
 
   },
   {
+    path: '/history',
+    name: 'history',
+    component: history
+
+  },
+  {
+    path: '/history/zhou',
+    name: ':zhou',
+    component: zhou
+
+  },
+  {
+    path: '/history/qin',
+    name: ':qin',
+    component: qin
+
+  },
+  {
+    path: '/history/han',
+    name: ':han',
+    component: han
+
+  },
+  {
+    path: '/history/jin',
+    name: ':jin',
+    component: jin
+
+  },
+  {
+    path: '/history/sui',
+    name: ':sui',
+    component: sui
+
+  },
+  {
+    path: '/history/wu',
+    name: ':wu',
+    component: wu
+
+  },
+  {
+    path: '/history/song',
+    name: ':song',
+    component: song
+
+  },
+  {
+    path: '/history/yuan',
+    name: ':yuan',
+    component: yuan
+
+  },
+  {
+    path: '/history/ming',
+    name: ':ming',
+    component: ming
+
+  },
+  {
+    path: '/history/qing',
+    name: ':qing',
+    component: qing
+
+  },
+  {
     path: '/login',
     name: 'login',
     component: login
@@ -53,8 +119,7 @@ const routes = [
     path: '/map',
     name: 'map',
     component: mapshow,
-  },
-  {
+  }, {
 
     path: '/map/special',
     name: 'special',

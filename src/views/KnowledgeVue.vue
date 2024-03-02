@@ -41,14 +41,23 @@
         width: 100%;
         background-image: url(../assets/pic/背景1.jpg);
         background-size: cover;
+    }
 
+    .back {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 3.5em;
+        height: 3.5em;
+        margin-right: 8px;
+        color: azure;
     }
 
     .chatbot {
         position: fixed;
-        right: 40px;
-        bottom: 100px;
-        width: 500px;
+        right: 80px;
+        bottom: 40px;
+        width: 550px;
         background: #fff;
         border-radius: 15px;
         box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
@@ -66,9 +75,9 @@
     }
 
     .chatbot .chatbox {
-        height: 520px;
+        height: 600px;
         overflow-y: auto;
-        padding: 30px 20px 70px;
+        padding: 30px 20px 120px;
     }
 
     .chatbox .chat {
@@ -95,6 +104,7 @@
     .chatbox .chat p {
         padding: 12px 12px;
         border-radius: 10px 10px 0 10px;
+        white-space: pre-wrap;
         background: #e8e9b6;
         font-size: 1rem;
         line-height: 1.5;
@@ -113,7 +123,7 @@
         width: 100%;
         display: flex;
         gap: 5px;
-        padding: 10px 20px;
+        padding: 5px 5px;
         border-top: 1px solid #ccc;
         background: #fff;
     }
@@ -122,11 +132,12 @@
         border: none;
         outline: none;
         font-size: 1.1rem;
+        max-height: 180px;
         font-weight: 600;
         resize: none;
         padding: 16px 15px 16px 0;
-        height: 70px;
-        width: 80%;
+        height: 60px;
+        width: 86%;
     }
 
     .chat-input span {

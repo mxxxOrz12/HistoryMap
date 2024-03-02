@@ -65,7 +65,7 @@
 
 .profile-page h1 {
     position: relative;
-    left: 35px;
+    left: 33px;
     font-size: 40px;
     color: #333;
     line-height: 1.5;
@@ -127,7 +127,7 @@
     font-size: 35px;
     height: 50px;
     position: relative;
-    right: 100px;
+    left: -95px;
 }
 
 .timeline {
@@ -168,7 +168,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     line-height: 1.6;
     font-size: 15px;
-    width: 520px;
+    width: 545px;
+
 }
 
 .event::before {

@@ -1,32 +1,51 @@
+# 千年舆图—中国历史地理电子地图平台
 
-# DianZiDiTu
+## 技术栈
 
-This template should help get you started developing with Vue 3 in Vite.
+![image-20240302222459095](https://s2.loli.net/2024/03/02/Nswfb7ndhW6IrQT.png)
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+项目采用Vue3+Springboot3+Postgis+Mapbox，将中国历史地理数据可视化，科普展示
 
 
+
+## 界面
+
+### 用户界面
+
+![image-20240302222713546](https://s2.loli.net/2024/03/02/XKWz4jqBaNsyMED.png)
+
+### 地图界面
+
+![image-20240302222750577](https://s2.loli.net/2024/03/02/P6js3WwqgKlbH1G.png)
+
+![image-20240302222811733](https://s2.loli.net/2024/03/02/896kgPciLOMwd7S.png)
+
+### 聊天机器人
+
+
+
+使用OpenAI接口搭建
+
+![image-20240302222857191](https://s2.loli.net/2024/03/02/Jq39gNo4WRuFtk6.png)
+
+##  系统未来开发方向
+
+**历史数据的收集与整合**
+收集历史矢量数据：深入收集关于黄河流域的历史变迁、长城的历史沿线变化等矢量数据，包括不同朝代的边界变化、历史事件的地点等，为用户提供丰富的历史地理信息。
+
+专题历史地图开发：开发以特定历史事件、文化遗产和自然地理为主题的地图，如丝绸之路的贸易路线、各朝代首都的变迁等，通过地图形式展现历史的发展脉络。
+
+**利用动画和3D 技术增强表现力**
+动态地图讲解：利用动画技术讲解重大历史事件，如淮海战役的过程，通过动态变化的前线、进攻和防守方向等，使用户能直观感受战役的发展过程。
+
+3D 地图特性：开发3D 特性的历史地图，如三维重建的长城、古城遗址等，让用户可以在虚拟环境中探索，体验沉浸式的历史学习。
+
+**知识图谱的整合，实现多源信息融合**
+建立历史知识图谱：整合历史人物、事件、地点等信息，构建知识图谱，通过关联分析，为用户提供丰富的背景知识和深入的历史解读。
+
+多源数据融合：结合历史文献、考古发现、民间传说等多源数据，提供更全面的历史视角，增加学习的深度和广度。
+
+**建立众包地理数据平台、地理数据社区**
+平台构建：开发一个众包地理数据平台，允许用户上传自己的地理历史数据。
+
+社区参与：鼓励用户参与到历史地理信息的收集和验证过程中来，通过社区的力量，可以极大地丰富和扩展现有的历史地理数据集。
